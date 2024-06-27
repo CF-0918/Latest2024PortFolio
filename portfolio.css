@@ -1,0 +1,290 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+body{
+    background-color: rgb(20, 19, 19);
+    text-transform: uppercase;
+    font-family:'Crimson Text',sans-serif ;
+}
+
+.nav-bar{
+    font-weight: 700;
+    font-size: 20px;
+    background-color: transparent;
+    color:white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.url{
+    text-align: center;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.item{
+    list-style-type:none;
+    margin:0px 20px;
+    text-decoration: none;
+    color:white;
+    transition: 0.2s ease-in-out;
+    padding:10px 20px;
+}
+
+.item:hover{
+    background-color: transparent;
+    border-radius: 16px;
+    box-shadow: 3px 3px 10px rgba(10, 190, 10, 0.719);
+}
+
+ .contact{
+    background-color: transparent;
+    border:1px solid white;
+    outline: 2px solid white;
+    outline-offset:6px ;
+    text-decoration: none;
+    color:white;
+    font-size: 2opx;
+    padding:10px 20px;
+    border-radius: 10px;
+    width: 100%;
+ }
+ .container {
+    letter-spacing: 1.5px;
+    color: white;
+    font-size: 18px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Two columns */
+    gap: 20px;
+ 
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card-1 {
+    border-top-left-radius: 25px;
+    box-shadow: 5px 5px 10px rgb(41, 40, 40) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky; /* Standard sticky position */
+    top: 10px; /* Example top offset */
+    background-color: rgb(29, 29, 29);
+    padding: 10px;
+    z-index: 1; /* Ensure it stays above other content */
+    height: 650px;
+}
+.card-2 {
+    height: 650px;
+    overflow-y: auto; /* Allows vertical scrolling if content overflows */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns items at the top */
+    align-items: center; /* Centers items horizontally */
+    box-shadow: 5px 0px 10px rgb(41, 40, 40);
+    border-bottom-right-radius: 25px;
+    background-color: rgb(29, 29, 29);
+    padding: 10px;
+    z-index: 1;
+    color: white; /* Ensures text is visible against dark background */
+}
+
+    /* Custom scrollbar styles */
+    .card-2::-webkit-scrollbar {
+        width: 12px;
+    }
+    .card-2::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius:20px;
+    }
+    .card-2::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 10px;
+        border: 3px solid #f1f1f1;
+    }
+    .card-2::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+
+ .image{
+    border:5px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: white;
+ }
+
+ .image img{
+    max-width: 100%;
+    height: auto;
+ }
+ .nav-bar-mobile{
+    display:none;
+}
+
+.username-box{
+    text-align: center;
+    position: relative;
+}
+
+.username:before{
+    content:' ';
+    border:1px solid white;
+    background-color: white;
+    position: absolute;
+    left:-30px;
+    padding:10px;
+    border-radius: 50%;
+    }
+
+.username:after{
+content:' ';
+border:1px solid white;
+background-color: white;
+position: absolute;
+right:-30px;
+padding:10px;
+border-radius: 50%;
+}
+section{
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about{
+    margin:15px 10px;
+    padding:10px;
+    line-height: 2.0;
+}
+.education,.cert,.skills,.personality {
+    margin:20px 30px;
+    padding:10px;
+    width: 80%; /* Sets the width to 50% of the parent element */
+    border-top: 1px solid white; /* Creates a border around the element */
+    border-bottom: 1px solid white; /* Creates a border around the element */
+    border-top-right-radius: 10px; /* Rounds the top-right corner */
+    border-bottom-left-radius: 10px; /* Rounds the top-right corner */
+}
+
+.skills-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Creates three equal columns */
+    gap: 10px; /* Optional: Adds space between columns */
+}
+
+#personality{
+    line-height: 1.9;
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+ @media screen and (max-width: 1200px) {
+    body{
+        color:white;
+    }
+    .nav-bar{
+        display:none;
+    }
+    /* CSS rules for screens up to 768px wide (typically phones) */
+    .nav-bar-mobile {
+       
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      
+    }
+    .nav-bar-mobile-box{
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 0; /* Stick to the top of the viewport */
+        z-index: 4;
+        background-color:rgb(20, 19, 19);
+    }
+    
+    .hamburger{
+        padding:10px;
+        border:none;
+        background-color: transparent;
+        color: #f1f1f1;
+        font-size:28px;
+        cursor: pointer;
+        z-index: 999;
+    }
+
+    .hamburger-menu{
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 0; /* Stick to the top of the viewport */
+        display: none;
+        width: 100%;
+        animation: myAnim 2s ease 0s 1 normal forwards;
+    }
+    @keyframes myAnim {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .url2{
+        width: 90%;
+        border:1px solid white;
+        padding:10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 20px;
+    }
+
+    .url2 .item1{
+        border-bottom:1px solid white;
+        line-height: 1.6;
+        list-style-type:none;
+        margin: 2px 0px;
+    }
+    .item1 a{
+        text-decoration: none;
+        color:white;
+    }
+    .item1 a:hover{
+        color:rgb(22, 117, 161);
+    }
+
+    .closeBtn{
+        text-align: end;
+        width: 100%;
+    }
+    #closeBtn{
+        margin-right: 10px;
+        background-color: transparent;
+        border:none;
+        font-size:19px;
+        color:#f1f1f1;
+        cursor: pointer;
+    }
+
+    .container {
+        letter-spacing: 1.5px;
+        color: white;
+        font-size: 18px;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+     
+    }
+
+   
+ }
