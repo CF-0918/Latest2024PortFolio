@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+        body {
+            background-color: rgb(214, 158, 85);
+            font-family: 'Crimson Text', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .input-text {
+            outline: 2px solid rgb(0, 0, 0);
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        .input-text:hover {
+            outline: 3px solid rgb(70, 70, 71);
+        }
+
+        .input-text:focus {
+            outline: 3px solid blue;
+        }
+
+        .input-radio {
+            display: none;
+        }
+
+        label {
+            font-weight: 700;
+            font-size: 25px;
+        }
+
+        .option {
+            border: 2px solid white;
+            background-color: grey;
+            color: white;
+            padding: 10px;
+            margin: 0px 10px;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .input-radio:checked+.option {
+            background-color: black;
+        }
+
+        .input-textarea {
+            outline: 2px solid rgb(0, 0, 0);
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            resize: vertical;
+            margin-top: 10px;
+        }
+
+        .input-textarea:hover {
+            outline: 3px solid rgb(70, 70, 71);
+        }
+
+        .input-textarea:focus {
+            outline: 3px solid blue;
+        }
+
+        .btn-custom {
+            background-color: rgb(0, 123, 255);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 50%;
+            font-size: 22px;
+            font-weight: 700;
+            border-radius: 30px;
+        }
+
+        .btn-custom:hover {
+            background-color: rgb(0, 105, 217);
+        }
+
+        .success-modal {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 45%;
+            z-index: 1;
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Crimson Text', sans-serif;
+        }
+
+        .modal-header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .details p {
+            font-size: 18px;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form id="sheetForm" class="row g-3">
+            <div class="input-box col-12 col-md-6">
+                <label for="name">Name</label>
+                <input type="text" class="input-text p-2 mt-2" name="name" id="name" placeholder="Ali" required />
+            </div>
+
+            <div class="input-box col-12 col-md-6">
+                <label for="tel">Phone No</label>
+                <input type="tel" class="input-text p-2 mt-2" name="tel" id="tel" placeholder="012 1212 2222"
+                    required />
+            </div>
+
+            <div class="input-box col-12 col-md-6">
+                <label for="year">Year</label>
+                <select class="input-text p-2" name="year" id="year" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+
+            <div class="input-box col-12 col-md-6">
+                <label for="branch">Branch</label>
+                <select class="input-text p-2" name="branch" id="branch" required>
+                    <option value="" disabled selected>Select a branch</option>
+                    <option value="PJY">PJY</option>
+                    <option value="SS2">SS2</option>
+                </select>
+            </div>
+
+            <div class="input-box col-12 text-center">
+                <label for="sejarah">Wants To Add Sejarah Subject</label>
+                <div class="my-3">
+                    <input type="radio" class="input-radio" name="subject" id="yes" value="YES" required />
+                    <label for="yes" class="option">YES</label>
+                    <input type="radio" class="input-radio" name="subject" id="no" value="NO" required />
+                    <label for="no" class="option">NO</label>
+                </div>
+            </div>
+
+            <div class="input-box col-12">
+                <label for="comment">Please Leave Us Any Comment</label>
+                <textarea class="input-textarea" name="comment" id="comment" rows="5" placeholder="Enter your comment"
+                    required></textarea>
+            </div>
+
+            <div class="col-12 text-center">
+                <button type="submit" class="btn-custom mt-3">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="success-modal">
+        <div class="modal-header">
+            <h1>Success Updated</h1>
+            <button class="closebtn" id="closebtn">X</button>
+        </div>
+        <div class="details">
+            <p>Dear user your details are able to been submited to our googel fom.</p>
+        </div>
+    </div>
+
+    <div class="loading-overlay" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        const form = document.getElementById('sheetForm');
+        const successModal = document.querySelector('.success-modal');
+        const loadingOverlay = document.querySelector('.loading-overlay');
+
+        const closeBtn = document.getElementById('closebtn');
+
+        closeBtn.addEventListener('click', function () {
+            successModal.style.display = 'none';
+        })
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            // Show loading overlay
+            loadingOverlay.style.display = 'block';
+
+            fetch('https://script.google.com/macros/s/AKfycbz2zjPy7NzD84uBYOCGKLtC9bnVxc5wkmiU2fmeBopjeUgsMFvROqyRaTD-78YbGhGB/exec', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(result => {
+                    if (result.trim() === 'Success') {
+                        // Show the success modal
+                        successModal.style.display = 'block';
+                        // Optionally reset the form
+                        form.reset();
+
+                    } else {
+                        console.error('Error submitting form:', result);
+                        // Handle error scenario if needed
+                    }
+                })
+                .catch(error => console.error('Error:', error))
+                .finally(() => {
+                    // Hide loading overlay after fetch completes
+                    loadingOverlay.style.display = 'none';
+                });
+        });
+    </script>
+
+</body>
+
+</html>
