@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Contact Us</title>
+    <title>Contact CF</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -12,16 +12,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
         body {
-            background-color: rgb(214, 158, 85);
+            background-color: rgba(44, 43, 43, 0.945);
             font-family: 'Crimson Text', sans-serif;
-            color: #333;
         }
 
         .container {
+            margin-top: 30px;
             background-color: white;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 5px 5px 10px;
         }
 
         .container h1 {
@@ -31,16 +31,18 @@
         }
 
         .input-box {
-            font-size: 20px;
+            font-size: 17px;
             padding: 10px;
         }
 
         .input-text {
+            font-weight: 800;
             outline: 2px solid rgb(0, 0, 0);
             width: 100%;
             border-radius: 10px;
             padding: 10px;
             margin-top: 5px;
+            border: none;
         }
 
         .input-text:hover {
@@ -48,6 +50,7 @@
         }
 
         .input-text:focus {
+            border: none;
             outline: 3px solid blue;
         }
 
@@ -81,7 +84,7 @@
             border-radius: 10px;
             padding: 10px;
             resize: vertical;
-            margin-top: 10px;
+
         }
 
         .input-textarea:hover {
@@ -113,9 +116,9 @@
         .success-modal {
             display: none;
             position: absolute;
-            top: 0;
-            left: 45%;
-            z-index: 1;
+            top: 10%;
+            left: 40%;
+            z-index: 2;
             background-color: green;
             color: white;
             border-radius: 10px;
@@ -123,9 +126,23 @@
             width: 90%;
             max-width: 400px;
             margin: 50px auto;
-            padding: 20px;
+            padding: 50px;
             text-align: center;
             font-family: 'Crimson Text', sans-serif;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent black background */
+            z-index: 1;
+            /* Ensure it's on top of other content */
+            display: none;
+            /* Initially hidden */
         }
 
         .modal-header {
@@ -139,58 +156,81 @@
             font-size: 18px;
             margin-top: 0;
         }
+
+        .back{
+            width: 10%;
+            font-size: 18px;
+            font-weight: 800;
+        }
     </style>
 </head>
 
 <body>
+    <div class="overlay" id="overlay">
+
+    </div>
+  
     <div class="container">
-        <h1>Contact Us</h1>
+        <a href="index.html" class="btn btn-primary back">Back</a>
+        <h1>Contact Me</h1>
         <form id="sheetForm" class="row g-3">
             <div class="input-box col-12 col-md-6">
-                <label for="name">Name</label>
-                <input type="text" class="input-text p-2 mt-2" name="name" id="name" placeholder="Ali" required />
+                <label for="name">HR Name</label>
+                <input type="text" class="input-text p-2 mt-2" name="name" id="name" placeholder="XXXXXXX" required />
             </div>
 
             <div class="input-box col-12 col-md-6">
-                <label for="tel">Phone No</label>
-                <input type="tel" class="input-text p-2 mt-2" name="tel" id="tel" placeholder="012 1212 2222"
+                <label for="tel">Company Name</label>
+                <input type="tel" class="input-text p-2 mt-2" name="company" id="company" placeholder="XXX SDN BHD"
                     required />
             </div>
 
-            <div class="input-box col-12 col-md-6">
-                <label for="year">Year</label>
-                <select class="input-text p-2" name="year" id="year" required>
+            <div class="input-box col-6 col-sm-12">
+                <label for="job">Job</label>
+                <select class="input-text p-2" name="job" id="job" required>
                     <option value="" disabled selected>Select</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
+                    <option value="UI/UX">UI/UX</option>
+                    <option value="BackEnd">BackEnd</option>
+                    <option value="full_stack">Full Stack</option>
+                    <option value="IT Support">IT Support</option>
+                    <option value="Data Analysis">Data Analysis</option>
                 </select>
             </div>
 
-            <div class="input-box col-12 col-md-6">
-                <label for="branch">Branch</label>
-                <select class="input-text p-2" name="branch" id="branch" required>
-                    <option value="" disabled selected>Select a branch</option>
-                    <option value="PJY">PJY</option>
-                    <option value="SS2">SS2</option>
+            <div class="input-box col-6 col-sm-12">
+                <label for="time">Looking For:</label>
+                <select class="input-text p-2" name="time" id="time" required>
+                    <option value="" disabled selected>Select a period</option>
+                    <option value="full">FUll TIME</option>
+                    <option value="part">PART TIME</option>
+                    <option value="intern">INTERN</option>
                 </select>
             </div>
 
-            <div class="input-box col-12 text-center">
-                <label for="sejarah">Wants To Add Sejarah Subject</label>
-                <div class="my-3">
+            <div class="input-box col-6">
+                <label for="email">Company Email : </label>
+                <input tpye="email" placeholder="example@gamil.com" name="email" value="" id="email"
+                    class="input-text" />
+            </div>
+
+            <div class="input-box col-6 text-center">
+                <label for="interview">Invite For Interview ?</label>
+                <div class="">
                     <input type="radio" class="input-radio" name="subject" id="yes" value="YES" required />
                     <label for="yes" class="option">YES</label>
+
+
                     <input type="radio" class="input-radio" name="subject" id="no" value="NO" required />
                     <label for="no" class="option">NO</label>
+
+
+                    <input type="radio" class="input-radio" name="subject" id="others" value="Others" required />
+                    <label for="others" class="option">Others</label>
                 </div>
             </div>
 
             <div class="input-box col-12">
-                <label for="comment">Please Leave Us Any Comment</label>
+                <label for="comment">Please Leave Me Any Comment</label>
                 <textarea class="input-textarea" name="comment" id="comment" rows="5" placeholder="Enter your comment"
                     required></textarea>
             </div>
@@ -202,16 +242,19 @@
     </div>
 
     <div class="success-modal">
-        <div class="modal-header">
+        <div class="modal-header" style=" display: flex; justify-content: center;">
             <h1>Success Updated</h1>
-            <button class="closebtn" id="closebtn">X</button>
         </div>
+
         <div class="details">
-            <p>Dear user your details are able to been submited to our googel fom.</p>
+            <p>Dear HR your form has been submited to my googel fom.</p>
+            <p>Thank You Again For Choosing Me !</p>
         </div>
+        <button id="closebtn" class="btn btn-success">OK</button>
     </div>
 
-    <div class="loading-overlay" style="display: none;">
+    <div class="loading-overlay"
+        style="display: none; position: absolute; top:30%;left:50%;border:1px solid black;background-color: white;padding:30px;text-align: center;">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
@@ -222,7 +265,7 @@
         const form = document.getElementById('sheetForm');
         const successModal = document.querySelector('.success-modal');
         const loadingOverlay = document.querySelector('.loading-overlay');
-
+        const overlay = document.getElementById("overlay");
         const closeBtn = document.getElementById('closebtn');
 
         closeBtn.addEventListener('click', function () {
@@ -232,10 +275,11 @@
             e.preventDefault();
             const formData = new FormData(form);
 
+            overlay.style.display = 'block';
             // Show loading overlay
             loadingOverlay.style.display = 'block';
 
-            fetch('https://script.google.com/macros/s/AKfycbz2zjPy7NzD84uBYOCGKLtC9bnVxc5wkmiU2fmeBopjeUgsMFvROqyRaTD-78YbGhGB/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbzMow67HFm92msB7cleXFRU2kcf7EhT8tnicvRmjaFTIRwQ-8aK7twJbQj_Y_B_KLym/exec', {
                 method: 'POST',
                 body: formData
             })
@@ -244,6 +288,7 @@
                     if (result.trim() === 'Success') {
                         // Show the success modal
                         successModal.style.display = 'block';
+
                         // Optionally reset the form
                         form.reset();
 
@@ -256,6 +301,7 @@
                 .finally(() => {
                     // Hide loading overlay after fetch completes
                     loadingOverlay.style.display = 'none';
+                    overlay.style.display = 'none';
                 });
         });
     </script>

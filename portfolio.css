@@ -38,17 +38,48 @@ body {
     box-shadow: 3px 3px 10px rgba(10, 190, 10, 0.719);
 }
 
+.contact-box{
+    animation: shake 5s ease-in-out 1;
+}
 .contact {
     background-color: transparent;
-    border: 1px solid white;
     outline: 2px solid white;
     outline-offset: 6px;
     text-decoration: none;
     color: white;
-    font-size: 2opx;
+    font-size: 20px;
     padding: 10px 20px;
     border-radius: 10px;
     width: 100%;
+
+    /* Auto-play shake animation */
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-20px);
+        /* Initial position left */
+    }
+
+    25% {
+        transform: translateX(20px);
+        /* Move to the right */
+    }
+
+    50% {
+        transform: translateX(-20px);
+        /* Move back to the left */
+    }
+
+    75% {
+        transform: translateX(20px);
+        /* Move to the right again */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Return to the original position */
+    }
 }
 
 .container {
